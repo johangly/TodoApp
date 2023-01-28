@@ -1,0 +1,62 @@
+@use './variables.scss' as var;
+
+.TodoItem{
+    background-color: var.$color-three;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 15px 10px;
+    z-index: 1;
+    border-radius:0 5px 5px 0;
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    box-shadow:  13px 13px 26px #d9d9d9,
+                -13px -13px 26px #ffffff;
+    border-left: 2px solid var.$color-five;
+    .TodoItem__buttons{
+        margin-left: auto;
+        margin-bottom: auto;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        align-items: flex-start;
+        button:nth-child(1){
+            margin-right: 8px;
+        }
+        button{
+            background-color: transparent;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            img{
+                width: 100%;
+                cursor: pointer;
+            }
+        }
+    }
+    
+}
+.TodoItem-completed{
+    background: linear-gradient(0deg, #b4b4b4, #b4b4b4);
+    z-index: 3;
+    .TodoItem__buttons{
+        button:nth-child(1){
+            margin-right: 8px;
+            background-color: transparent;
+            font-weight: 400;
+            img{
+                filter: brightness(0) saturate(100%) invert(49%) sepia(50%) saturate(0%) hue-rotate(77deg) brightness(110%) contrast(90%);
+                cursor: default;
+            }
+        }
+    }
+    p{
+        text-decoration: line-through;
+    }
+}

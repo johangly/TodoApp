@@ -1,0 +1,13 @@
+@use './variables.scss' as var;
+
+section{
+    width: 100%;
+    .TodoList{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+    }
+}
