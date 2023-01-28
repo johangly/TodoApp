@@ -2,10 +2,11 @@ import {useState, useEffect} from 'react'
 
 function useLocalStorage(itemName, initialValue){
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
+    const [Error, setError] = useState(false);
     const [item, setItem] = useState(initialValue);
 
     useEffect(()=>{
+        console.log('ejecuta')
         setTimeout(() => {
             try {
                 const localStorageItem = localStorage.getItem(itemName);
@@ -21,6 +22,7 @@ function useLocalStorage(itemName, initialValue){
                 setLoading(false);
             } catch (error) {
                 setError(error);
+                console.log(Error)
             }
         }, 1500);
     },[])
