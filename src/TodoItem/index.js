@@ -2,7 +2,6 @@ import './TodoItem.scss';
 import checked from '../assets/checked.svg';
 import deleted from '../assets/delete.svg';
 function TodoItem(props){
-
     const checkTodo =()=>{
         if(props.completedTodo === false){
             // busca el todo con el text correspondiente
