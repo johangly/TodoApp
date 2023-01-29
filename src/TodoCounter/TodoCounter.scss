@@ -1,6 +1,6 @@
 @use '../variables.scss' as var;
 
-.Todo > h2{
+.Todo .TodoHeader > h2{
     color: var.$black;
     font-size: 2rem;
     margin-bottom: 50px;

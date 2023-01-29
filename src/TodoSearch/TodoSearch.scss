@@ -6,6 +6,7 @@
     border-radius: 5px;
     position: relative;
     .TodoSearch__input{
+        transition: 500ms ease opacity;
         width: 100%;
         height: 60px;
         border-radius: 5px;
@@ -24,6 +25,9 @@
         box-shadow:  13px 13px 26px #d9d9d9,
                     -13px -13px 26px #ffffff;
     }
+    .TodoSearch__loading{
+        opacity: 0.2;
+    }
     span:after{
         content: '';
         width: 100%;
@@ -34,5 +38,4 @@
         left: 0;
         background-color: var.$color-five;
     }
-
 }

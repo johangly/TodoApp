@@ -1,10 +1,10 @@
 import React from 'react'
 import { createContext,useState } from 'react'
-import { useLocalStorage } from '../Hooks/useLocalStorage';
+import { useLocalStorage } from './useLocalStorage';
 
 const TodoContext = createContext();
 
-function TodoProvider(props) {
+function useTodos(props) {
     const {item:todos, saveItem:saveTodos, loading} = useLocalStorage("TODOS_V1",[]);
     const [cannotAddTodo,setCannotAddTodo]=useState({error:false,errorMessage:""});
     const addTodo = (text)=>{
@@ -34,27 +34,21 @@ function TodoProvider(props) {
         });
     }
 
-    return (
-        <div>
-            <TodoContext.Provider value={{
-                totalTodos,
-                completedTodos,
-                searchValue,
-                setSearchValue,
-                todos,
-                saveTodos,
-                searchedTodos,
-                loading,
-                openModal,
-                setOpenModal,
-                addTodo,
-                cannotAddTodo,
-                setCannotAddTodo,
-            }}>
-                {props.children}
-            </TodoContext.Provider>
-        </div>
-    )
+    return {
+        totalTodos,
+        completedTodos,
+        searchValue,
+        setSearchValue,
+        todos,
+        saveTodos,
+        searchedTodos,
+        loading,
+        openModal,
+        setOpenModal,
+        addTodo,
+        cannotAddTodo,
+        setCannotAddTodo,
+    };
 }
 
-export {TodoContext, TodoProvider};
+export {useTodos};

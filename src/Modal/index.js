@@ -13,8 +13,11 @@ function Modal({setOpenModal,addTodo,cannotAddTodo,setCannotAddTodo}) {
         setInputValue(event.target.value);
     }
     const adding =()=>{
-        addTodo(inputValue);
-        setInputValue("");
+        if(inputValue.length > 0){
+            addTodo(inputValue);
+            setInputValue("");
+        }
+
     };
     return ReactDOM.createPortal(
         <div className="modal">
