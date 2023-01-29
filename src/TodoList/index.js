@@ -1,6 +1,5 @@
 import './TodoList.scss'
 function TodoList(props){
-    console.log(props)
     return(
         <section>
             <ul className="TodoList">
