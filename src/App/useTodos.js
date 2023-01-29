@@ -1,8 +1,5 @@
-import React from 'react'
-import { createContext,useState } from 'react'
+import { useState } from 'react'
 import { useLocalStorage } from './useLocalStorage';
-
-const TodoContext = createContext();
 
 function useTodos(props) {
     const {item:todos, saveItem:saveTodos, loading} = useLocalStorage("TODOS_V1",[]);
